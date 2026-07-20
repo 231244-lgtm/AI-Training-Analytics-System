@@ -1,39 +1,37 @@
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
-import { FaUpload } from "react-icons/fa";
+import StatCard from "../components/StatCard";
+
+import {
+  FaChalkboardTeacher,
+  FaBookOpen,
+  FaStar,
+  FaSmile,
+} from "react-icons/fa";
 
 import "../styles/Dashboard.css";
 
 function Dashboard() {
-  const hour = new Date().getHours();
-
-  let greeting = "Good Evening";
-
-  if (hour >= 5 && hour < 12) {
-    greeting = "Good Morning";
-  } else if (hour >= 12 && hour < 17) {
-    greeting = "Good Afternoon";
-  }
-
   return (
     <div className="dashboard">
+
       <Sidebar />
 
       <div className="dashboard-content">
+
         <Navbar />
 
-        <main className="dashboard-main">
+        <div className="dashboard-body">
+
           <section className="hero-card">
 
-            <div className="hero-left">
+            <div>
 
-              <span className="hero-greeting">
-                👋 {greeting}, Administrator
+              <span className="welcome-text">
+                👋 Good Evening, Administrator
               </span>
 
-              <h1>
-                Welcome back!
-              </h1>
+              <h1>Welcome back!</h1>
 
               <h2>
                 Training Analytics & AI Recommendation System
@@ -47,18 +45,48 @@ function Dashboard() {
 
             </div>
 
-            <div className="hero-right">
-
-              <button className="upload-btn">
-                <FaUpload />
-                Upload Dataset
-              </button>
-
-            </div>
+            <button className="upload-btn">
+              Upload Dataset
+            </button>
 
           </section>
-        </main>
+
+          <section className="stats-grid">
+
+            <StatCard
+              title="Total Trainers"
+              value="148"
+              change="+12%"
+              icon={<FaChalkboardTeacher />}
+            />
+
+            <StatCard
+              title="Trainings Conducted"
+              value="1,256"
+              change="+8%"
+              icon={<FaBookOpen />}
+            />
+
+            <StatCard
+              title="Average Rating"
+              value="4.8"
+              change="+0.4"
+              icon={<FaStar />}
+            />
+
+            <StatCard
+              title="Satisfaction Rate"
+              value="96%"
+              change="+5%"
+              icon={<FaSmile />}
+            />
+
+          </section>
+
+        </div>
+
       </div>
+
     </div>
   );
 }
