@@ -1,0 +1,53 @@
+.trainer-page {
+  padding: 32px;
+}
+
+.trainer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+  gap: 20px;
+}
+
+.trainer-header h1 {
+  font-size: 40px;
+  color: #0f172a;
+}
+
+.trainer-header p {
+  margin-top: 10px;
+  color: #64748b;
+}
+
+.search-trainer {
+  width: 320px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid #dbeafe;
+  outline: none;
+  font-size: 15px;
+}
+
+.search-trainer:focus {
+  border-color: #2563eb;
+}
+
+.trainer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+
+  .trainer-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-trainer {
+    width: 100%;
+  }
+
+}
