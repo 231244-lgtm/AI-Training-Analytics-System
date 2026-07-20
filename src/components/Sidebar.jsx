@@ -1,5 +1,3 @@
-import "../styles/Sidebar.css";
-
 import {
   FaHome,
   FaChalkboardTeacher,
@@ -9,53 +7,84 @@ import {
   FaCog,
 } from "react-icons/fa";
 
+import { NavLink } from "react-router-dom";
+
+import "../styles/Sidebar.css";
+
 function Sidebar() {
   return (
     <aside className="sidebar">
 
       <div className="logo">
-        <h1>READ</h1>
-        <h1>Foundation</h1>
-        <p>Training Analytics</p>
-      </div>
 
-      <div className="divider"></div>
+        <h1>READ Foundation</h1>
+
+        <p>Training Analytics</p>
+
+      </div>
 
       <nav>
 
-        <ul>
+        <NavLink
+          to="/"
+          end
+          className={({ isActive }) =>
+            isActive ? "menu-item active" : "menu-item"
+          }
+        >
+          <FaHome />
+          Dashboard
+        </NavLink>
 
-          <li className="active">
-            <FaHome />
-            <span>Dashboard</span>
-          </li>
+        <NavLink
+          to="/trainer-profiles"
+          className={({ isActive }) =>
+            isActive ? "menu-item active" : "menu-item"
+          }
+        >
+          <FaChalkboardTeacher />
+          Trainer Profiles
+        </NavLink>
 
-          <li>
-            <FaChalkboardTeacher />
-            <span>Trainer Profiles</span>
-          </li>
+        <NavLink
+          to="/analytics"
+          className={({ isActive }) =>
+            isActive ? "menu-item active" : "menu-item"
+          }
+        >
+          <FaChartBar />
+          Analytics
+        </NavLink>
 
-          <li>
-            <FaChartBar />
-            <span>Analytics</span>
-          </li>
+        <NavLink
+          to="/feedback"
+          className={({ isActive }) =>
+            isActive ? "menu-item active" : "menu-item"
+          }
+        >
+          <FaComments />
+          Feedback
+        </NavLink>
 
-          <li>
-            <FaComments />
-            <span>Feedback</span>
-          </li>
+        <NavLink
+          to="/recommendations"
+          className={({ isActive }) =>
+            isActive ? "menu-item active" : "menu-item"
+          }
+        >
+          <FaLightbulb />
+          Recommendations
+        </NavLink>
 
-          <li>
-            <FaLightbulb />
-            <span>Recommendations</span>
-          </li>
-
-          <li>
-            <FaCog />
-            <span>Settings</span>
-          </li>
-
-        </ul>
+        <NavLink
+          to="/settings"
+          className={({ isActive }) =>
+            isActive ? "menu-item active" : "menu-item"
+          }
+        >
+          <FaCog />
+          Settings
+        </NavLink>
 
       </nav>
 
