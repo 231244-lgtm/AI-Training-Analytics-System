@@ -1,0 +1,62 @@
+.chart-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.08);
+  transition: all 0.3s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.chart-header h3 {
+  font-size: 24px;
+  color: #0f172a;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.chart-header p {
+  color: #64748b;
+  font-size: 15px;
+}
+
+.chart-growth {
+  background: #e8f5e9;
+  color: #16a34a;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.recharts-cartesian-grid line {
+  stroke: #e5e7eb;
+}
+
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+
+.recharts-default-tooltip {
+  border: none !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+}
+
+.recharts-tooltip-label {
+  font-weight: 600;
+}
+
+.recharts-responsive-container {
+  margin-top: 15px;
+}

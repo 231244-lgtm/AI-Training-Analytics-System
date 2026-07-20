@@ -1,0 +1,87 @@
+.insight-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: all 0.3s ease;
+}
+
+.insight-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+}
+
+.insight-title h3 {
+  color: #0f172a;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.insight-title p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.insight-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 16px;
+  background: #f8fafc;
+  transition: all 0.25s ease;
+}
+
+.insight-box:hover {
+  background: #eef4ff;
+}
+
+.insight-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #2563eb;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.insight-box span {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.insight-box h4 {
+  margin-top: 3px;
+  color: #0f172a;
+  font-size: 18px;
+}
+
+.recommendation {
+  background: #eef4ff;
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.recommendation-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.recommendation-header h4 {
+  font-size: 17px;
+}
+
+.recommendation p {
+  color: #475569;
+  line-height: 1.7;
+  font-size: 14px;
+}
