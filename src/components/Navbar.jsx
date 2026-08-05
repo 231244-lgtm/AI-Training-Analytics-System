@@ -1,18 +1,31 @@
 import "../styles/Navbar.css";
 import { FaBell, FaSearch, FaUserCircle } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 
 function Navbar() {
+  const location = useLocation();
+
   const today = new Date().toLocaleDateString("en-US", {
     weekday: "long",
     month: "long",
     day: "numeric",
   });
 
+  const pageTitles = {
+    "/": "Dashboard",
+    "/trainer-profiles": "Trainer Profiles",
+    "/analytics": "Analytics",
+    "/feedback": "Feedback",
+    "/recommendations": "Recommendations",
+    "/settings": "Settings",
+  };
+
+  const currentTitle = pageTitles[location.pathname] || "Dashboard";
+
   return (
     <header className="navbar">
-
       <div>
-        <h2>Dashboard</h2>
+        <h2>{currentTitle}</h2>
         <p>{today}</p>
       </div>
 
@@ -22,7 +35,7 @@ function Navbar() {
           <FaSearch />
           <input
             type="text"
-            placeholder="Search trainers..."
+            placeholder="Search..."
           />
         </div>
 
@@ -39,7 +52,6 @@ function Navbar() {
         </div>
 
       </div>
-
     </header>
   );
 }
