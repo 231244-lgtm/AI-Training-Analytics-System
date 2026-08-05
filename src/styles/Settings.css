@@ -1,0 +1,87 @@
+.settings-page{
+    padding:32px;
+}
+
+.settings-header{
+    margin-bottom:35px;
+}
+
+.settings-header h1{
+    font-size:42px;
+    color:#0F172A;
+}
+
+.settings-header p{
+    margin-top:10px;
+    color:#64748B;
+    font-size:17px;
+}
+
+.settings-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+    gap:25px;
+}
+
+.setting-item{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:20px;
+}
+
+.setting-item label{
+    font-weight:600;
+    margin-bottom:8px;
+    color:#334155;
+}
+
+.setting-item input{
+    padding:14px;
+    border:1px solid #CBD5E1;
+    border-radius:10px;
+    background:#F8FAFC;
+}
+
+.toggle-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.toggle-item label{
+    font-weight:500;
+    color:#334155;
+}
+
+.toggle-item input{
+    width:22px;
+    height:22px;
+    cursor:pointer;
+}
+
+.settings-btn{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:12px;
+    background:#2563EB;
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.settings-btn:hover{
+    background:#1D4ED8;
+}
+
+.settings-btn.save{
+    background:#16A34A;
+}
+
+.settings-btn.save:hover{
+    background:#15803D;
+}

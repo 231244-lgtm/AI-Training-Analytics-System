@@ -1,0 +1,11 @@
+.setting-card{
+    background:white;
+    border-radius:22px;
+    padding:30px;
+    box-shadow:0 10px 25px rgba(15,23,42,.08);
+}
+
+.setting-card h2{
+    margin-bottom:25px;
+    color:#0F172A;
+}
