@@ -1,0 +1,26 @@
+.performance-card{
+    margin-top:40px;
+    background:white;
+    border-radius:22px;
+    padding:30px;
+    box-shadow:0 10px 25px rgba(15,23,42,.08);
+}
+
+.chart-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.chart-header h2{
+    color:#0F172A;
+}
+
+.chart-header span{
+    background:#DCFCE7;
+    color:#16A34A;
+    padding:10px 20px;
+    border-radius:999px;
+    font-weight:600;
+}

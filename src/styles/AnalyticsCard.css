@@ -1,0 +1,24 @@
+.analytics-page{
+    padding:32px;
+}
+
+.analytics-header{
+    margin-bottom:35px;
+}
+
+.analytics-header h1{
+    font-size:42px;
+    color:#0F172A;
+}
+
+.analytics-header p{
+    margin-top:10px;
+    color:#64748B;
+    font-size:17px;
+}
+
+.analytics-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
