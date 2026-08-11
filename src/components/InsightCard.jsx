@@ -3,6 +3,7 @@ import {
   FaSmile,
   FaShieldAlt,
   FaLightbulb,
+  FaBrain,
 } from "react-icons/fa";
 
 import "../styles/InsightCard.css";
@@ -12,13 +13,26 @@ function InsightCard() {
     <div className="insight-card">
 
       <div className="insight-title">
-        <h3>🤖 AI Insights</h3>
-        <p>Latest analysis summary</p>
+        <div className="insight-heading">
+          <div className="insight-main-icon">
+            <FaBrain />
+          </div>
+
+          <div>
+            <h3>AI Insights</h3>
+            <p>Latest analysis summary</p>
+          </div>
+        </div>
+
+        <span className="insight-status">
+          <span className="status-dot"></span>
+          Ready for analysis
+        </span>
       </div>
 
       <div className="insight-box">
 
-        <div className="insight-icon">
+        <div className="insight-icon trainer-icon">
           <FaUserTie />
         </div>
 
@@ -31,7 +45,7 @@ function InsightCard() {
 
       <div className="insight-box">
 
-        <div className="insight-icon">
+        <div className="insight-icon satisfaction-icon">
           <FaSmile />
         </div>
 
@@ -44,7 +58,7 @@ function InsightCard() {
 
       <div className="insight-box">
 
-        <div className="insight-icon">
+        <div className="insight-icon risk-icon">
           <FaShieldAlt />
         </div>
 
@@ -59,7 +73,11 @@ function InsightCard() {
 
         <div className="recommendation-header">
           <FaLightbulb />
-          <h4>AI Recommendation</h4>
+
+          <div>
+            <span>AI Recommendation</span>
+            <h4>Recommended Action</h4>
+          </div>
         </div>
 
         <p>

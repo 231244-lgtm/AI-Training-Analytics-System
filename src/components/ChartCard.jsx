@@ -19,67 +19,159 @@ const performanceData = [
   { month: "Jun", score: 95 },
 ];
 
+function CustomTooltip({ active, payload, label }) {
+  if (active && payload && payload.length) {
+    return (
+      <div className="custom-tooltip">
+        <p className="tooltip-month">{label}</p>
+        <p className="tooltip-score">
+          Score: <strong>{payload[0].value}</strong>
+        </p>
+      </div>
+    );
+  }
+
+  return null;
+}
+
 function ChartCard() {
   return (
     <div className="chart-card">
 
+      {/* HEADER */}
       <div className="chart-header">
 
         <div>
           <h3>Training Performance</h3>
-          <p>Average trainer performance over the last 6 months</p>
+
+          <p>
+            Average trainer performance over the last 6 months
+          </p>
         </div>
 
         <div className="chart-growth">
-          ▲ +18%
+          <span>▲</span>
+          +18%
         </div>
 
       </div>
 
-      <ResponsiveContainer width="100%" height={340}>
-        <AreaChart data={performanceData}>
+      {/* CHART */}
+      <div className="chart-container">
 
-          <defs>
-            <linearGradient id="colorScore" x1="0" y1="0" x2="0" y2="1">
+        <ResponsiveContainer width="100%" height={340}>
 
-              <stop
-                offset="5%"
-                stopColor="#2563EB"
-                stopOpacity={0.35}
-              />
+          <AreaChart
+            data={performanceData}
+            margin={{
+              top: 10,
+              right: 10,
+              left: 0,
+              bottom: 5,
+            }}
+          >
 
-              <stop
-                offset="95%"
-                stopColor="#2563EB"
-                stopOpacity={0}
-              />
+            <defs>
 
-            </linearGradient>
-          </defs>
+              <linearGradient
+                id="performanceGradient"
+                x1="0"
+                y1="0"
+                x2="0"
+                y2="1"
+              >
 
-          <CartesianGrid
-            strokeDasharray="4 4"
-            vertical={false}
-          />
+                <stop
+                  offset="0%"
+                  stopColor="#2563eb"
+                  stopOpacity={0.28}
+                />
 
-          <XAxis dataKey="month" />
+                <stop
+                  offset="100%"
+                  stopColor="#2563eb"
+                  stopOpacity={0.02}
+                />
 
-          <YAxis domain={[60, 100]} />
+              </linearGradient>
 
-          <Tooltip />
+            </defs>
 
-          <Area
-            type="monotone"
-            dataKey="score"
-            stroke="#2563EB"
-            strokeWidth={4}
-            fill="url(#colorScore)"
-            dot={{ r: 5 }}
-            activeDot={{ r: 7 }}
-          />
+            <CartesianGrid
+              stroke="#e2e8f0"
+              strokeDasharray="4 4"
+              vertical={false}
+            />
 
-        </AreaChart>
-      </ResponsiveContainer>
+            <XAxis
+              dataKey="month"
+              axisLine={false}
+              tickLine={false}
+              tick={{ fill: "#64748b", fontSize: 13 }}
+              dy={10}
+            />
+
+            <YAxis
+              domain={[60, 100]}
+              axisLine={false}
+              tickLine={false}
+              tick={{ fill: "#64748b", fontSize: 13 }}
+              width={35}
+            />
+
+            <Tooltip
+              content={<CustomTooltip />}
+              cursor={{
+                stroke: "#cbd5e1",
+                strokeWidth: 1,
+              }}
+            />
+
+            <Area
+              type="monotone"
+              dataKey="score"
+              stroke="#2563eb"
+              strokeWidth={3}
+              fill="url(#performanceGradient)"
+              dot={{
+                r: 4,
+                fill: "#2563eb",
+                stroke: "#ffffff",
+                strokeWidth: 2,
+              }}
+              activeDot={{
+                r: 7,
+                fill: "#2563eb",
+                stroke: "#ffffff",
+                strokeWidth: 3,
+              }}
+            />
+
+          </AreaChart>
+
+        </ResponsiveContainer>
+
+      </div>
+
+      {/* FOOTER */}
+      <div className="chart-footer">
+
+        <div>
+          <span className="footer-label">Starting Score</span>
+          <strong>72</strong>
+        </div>
+
+        <div>
+          <span className="footer-label">Current Score</span>
+          <strong>95</strong>
+        </div>
+
+        <div>
+          <span className="footer-label">Overall Growth</span>
+          <strong className="growth-value">+23 points</strong>
+        </div>
+
+      </div>
 
     </div>
   );

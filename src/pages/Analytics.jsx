@@ -1,96 +1,402 @@
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
-import AnalyticsCard from "../components/AnalyticsCard";
+
 import PerformanceChart from "../components/PerformanceChart";
 import TrainerBarChart from "../components/TrainerBarChart";
 import DepartmentPieChart from "../components/DepartmentPieChart";
+
+import {
+  FaStar,
+  FaCheckCircle,
+  FaUsers,
+  FaChartLine,
+  FaBrain,
+  FaArrowUp,
+  FaLightbulb,
+} from "react-icons/fa";
 
 import "../styles/Analytics.css";
 
 function Analytics() {
   return (
     <div className="dashboard">
+
       <Sidebar />
 
       <div className="dashboard-content">
+
         <Navbar />
 
-        <div className="analytics-page">
+        <main className="analytics-page">
 
-          <div className="analytics-header">
-            <h1>Training Analytics</h1>
+          {/* ================= HEADER ================= */}
 
-            <p>
-              Analyze trainer performance, department statistics,
-              and overall training outcomes.
-            </p>
-          </div>
+          <section className="analytics-header">
 
-          <div className="analytics-cards">
-            <AnalyticsCard
-              title="Average Rating"
-              value="4.8"
-              subtitle="+0.3 this month"
-            />
+            <div>
+              <span className="analytics-eyebrow">
+                PERFORMANCE OVERVIEW
+              </span>
 
-            <AnalyticsCard
-              title="Completion Rate"
-              value="96%"
-              subtitle="+5%"
-            />
+              <h1>Training Analytics</h1>
 
-            <AnalyticsCard
-              title="Top Department"
-              value="STEM"
-              subtitle="Highest Performance"
-            />
-          </div>
+              <p>
+                Monitor trainer performance, training outcomes,
+                and organizational trends from one centralized view.
+              </p>
+            </div>
 
-          <PerformanceChart />
+            <div className="analytics-status">
+              <FaArrowUp />
+              <span>Overall performance improving</span>
+            </div>
 
-          <div className="chart-grid">
-            <TrainerBarChart />
-            <DepartmentPieChart />
-          </div>
+          </section>
 
-          <div className="ai-summary">
 
-            <h2>🤖 AI Summary</h2>
+          {/* ================= KPI SECTION ================= */}
 
-            <div className="summary-grid">
+          <section className="kpi-section">
 
-              <div className="summary-card">
-                <h3>Top Trainer</h3>
-                <h1>Ayesha Khan</h1>
-                <p>Overall Rating: 4.9 / 5</p>
+            <div className="kpi-card">
+
+              <div className="kpi-top">
+                <div className="kpi-icon">
+                  <FaStar />
+                </div>
+
+                <span className="kpi-change">
+                  +0.4
+                </span>
               </div>
 
-              <div className="summary-card">
-                <h3>Best Department</h3>
-                <h1>STEM</h1>
-                <p>Highest average performance score</p>
+              <h2>4.8</h2>
+
+              <p>Average Rating</p>
+
+              <span className="kpi-description">
+                Trainer performance score
+              </span>
+
+            </div>
+
+
+            <div className="kpi-card">
+
+              <div className="kpi-top">
+                <div className="kpi-icon">
+                  <FaCheckCircle />
+                </div>
+
+                <span className="kpi-change">
+                  +5%
+                </span>
               </div>
 
-              <div className="summary-card">
-                <h3>Completion Rate</h3>
-                <h1>96%</h1>
-                <p>Training completion remains excellent.</p>
+              <h2>96%</h2>
+
+              <p>Completion Rate</p>
+
+              <span className="kpi-description">
+                Training completion
+              </span>
+
+            </div>
+
+
+            <div className="kpi-card">
+
+              <div className="kpi-top">
+                <div className="kpi-icon">
+                  <FaUsers />
+                </div>
+
+                <span className="kpi-change">
+                  +12%
+                </span>
               </div>
 
-              <div className="summary-card">
-                <h3>AI Recommendation</h3>
-                <h1>Advanced STEM Training</h1>
+              <h2>148</h2>
+
+              <p>Total Trainers</p>
+
+              <span className="kpi-description">
+                Active trainers
+              </span>
+
+            </div>
+
+
+            <div className="kpi-card">
+
+              <div className="kpi-top">
+                <div className="kpi-icon">
+                  <FaChartLine />
+                </div>
+
+                <span className="kpi-change">
+                  +18%
+                </span>
+              </div>
+
+              <h2>95</h2>
+
+              <p>Performance Score</p>
+
+              <span className="kpi-description">
+                Current overall score
+              </span>
+
+            </div>
+
+          </section>
+
+
+          {/* ================= PERFORMANCE ================= */}
+
+          <section className="analytics-section-title">
+
+            <div>
+              <h2>Performance Trends</h2>
+
+              <p>
+                Average trainer performance over the last six months.
+              </p>
+            </div>
+
+            <div className="section-badge">
+              <FaArrowUp />
+              +18% growth
+            </div>
+
+          </section>
+
+
+          <section className="performance-main">
+            <PerformanceChart />
+
+            <div className="ai-analysis-card">
+
+              <div className="ai-analysis-header">
+
+                <div className="ai-icon">
+                  <FaBrain />
+                </div>
+
+                <div>
+                  <h3>AI Analysis</h3>
+                  <p>Latest performance insights</p>
+                </div>
+
+              </div>
+
+
+              <div className="ai-metric">
+
+                <span>Top Trainer</span>
+
+                <strong>Ayesha Khan</strong>
+
+                <small>
+                  Overall rating: 4.9 / 5
+                </small>
+
+              </div>
+
+
+              <div className="ai-metric">
+
+                <span>Leading Department</span>
+
+                <strong>STEM</strong>
+
+                <small>
+                  Highest average performance
+                </small>
+
+              </div>
+
+
+              <div className="ai-metric">
+
+                <span>Training Completion</span>
+
+                <strong>96%</strong>
+
+                <small>
+                  Strong completion performance
+                </small>
+
+              </div>
+
+
+              <div className="ai-recommendation">
+
+                <div className="recommendation-title">
+                  <FaLightbulb />
+
+                  <span>Recommended Action</span>
+                </div>
+
                 <p>
-                  Focus upcoming workshops on STEM trainers
-                  to maximize organizational impact.
+                  Expand advanced STEM training opportunities
+                  based on current performance trends.
                 </p>
+
               </div>
 
             </div>
 
-          </div>
+          </section>
 
-        </div>
+
+          {/* ================= TRAINER + DEPARTMENT ================= */}
+
+          <section className="analytics-section-title secondary-title">
+
+            <div>
+              <h2>Training Performance</h2>
+
+              <p>
+                Compare trainer performance and department distribution.
+              </p>
+            </div>
+
+          </section>
+
+
+          <section className="charts-grid">
+
+            <div className="chart-panel">
+              <div className="chart-panel-header">
+
+                <div>
+                  <h3>Top Trainers</h3>
+
+                  <p>
+                    Highest performing trainers
+                  </p>
+                </div>
+
+              </div>
+
+              <TrainerBarChart />
+
+            </div>
+
+
+            <div className="chart-panel">
+
+              <div className="chart-panel-header">
+
+                <div>
+                  <h3>Department Distribution</h3>
+
+                  <p>
+                    Training distribution by department
+                  </p>
+                </div>
+
+              </div>
+
+              <DepartmentPieChart />
+
+            </div>
+
+          </section>
+
+
+          {/* ================= AI SUMMARY ================= */}
+
+          <section className="ai-summary-section">
+
+            <div className="ai-summary-header">
+
+              <div className="ai-summary-title">
+
+                <div className="ai-summary-icon">
+                  <FaBrain />
+                </div>
+
+                <div>
+                  <h2>AI Insights</h2>
+
+                  <p>
+                    Intelligent observations from training data
+                  </p>
+                </div>
+
+              </div>
+
+
+              <div className="ai-ready">
+                <span></span>
+                Ready for analysis
+              </div>
+
+            </div>
+
+
+            <div className="ai-insight-grid">
+
+              <div className="ai-insight">
+
+                <span className="insight-label">
+                  PERFORMANCE
+                </span>
+
+                <h3>
+                  STEM training is currently leading.
+                </h3>
+
+                <p>
+                  The STEM department shows the strongest
+                  overall training performance in the current dataset.
+                </p>
+
+              </div>
+
+
+              <div className="ai-insight">
+
+                <span className="insight-label">
+                  SATISFACTION
+                </span>
+
+                <h3>
+                  Overall trainee satisfaction is strong.
+                </h3>
+
+                <p>
+                  The current satisfaction rate indicates
+                  consistently positive training experiences.
+                </p>
+
+              </div>
+
+
+              <div className="ai-insight">
+
+                <span className="insight-label">
+                  RECOMMENDATION
+                </span>
+
+                <h3>
+                  Expand advanced STEM training.
+                </h3>
+
+                <p>
+                  Allocate additional advanced training
+                  opportunities based on current performance trends.
+                </p>
+
+              </div>
+
+            </div>
+
+          </section>
+
+        </main>
 
       </div>
 
