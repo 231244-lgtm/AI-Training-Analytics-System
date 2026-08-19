@@ -8,15 +8,12 @@ import {
   FaChalkboardTeacher,
   FaBookOpen,
   FaStar,
-  FaSmile,
+  FaExclamationTriangle,
   FaUpload,
   FaPlay,
   FaFileAlt,
   FaDatabase,
   FaBrain,
-  FaArrowUp,
-  FaChartLine,
-  FaCircle,
 } from "react-icons/fa";
 
 import "../styles/Dashboard.css";
@@ -24,56 +21,57 @@ import "../styles/Dashboard.css";
 function Dashboard() {
   return (
     <div className="dashboard">
+
       <Sidebar />
 
       <div className="dashboard-content">
+
         <Navbar />
 
-        <main className="dashboard-body">
+        <div className="dashboard-body">
 
-          {/* HERO SECTION */}
+          {/* ================= HERO ================= */}
+
           <section className="hero-card">
 
             <div className="hero-left">
 
-              <div className="hero-label">
-                <span className="hero-label-dot"></span>
-                TRAINING INTELLIGENCE
-              </div>
+              <span className="welcome-text">
+                Good Evening, Administrator
+              </span>
 
               <h1>
-                Training performance,
-                <br />
-                powered by intelligence.
+                AI-Driven Training Analytics Dashboard
               </h1>
 
               <p>
                 Monitor trainer performance, evaluate training outcomes,
-                and turn organizational data into actionable insights.
+                and generate intelligent AI-powered recommendations from
+                one centralized platform.
               </p>
 
               <div className="hero-status">
 
                 <div className="status-card">
-                  <div className="status-icon">
-                    <FaDatabase />
-                  </div>
+
+                  <FaDatabase />
 
                   <div>
-                    <span>DATASET STATUS</span>
+                    <span>Dataset Status</span>
                     <h4>No dataset uploaded</h4>
                   </div>
+
                 </div>
 
                 <div className="status-card">
-                  <div className="status-icon ai-icon">
-                    <FaBrain />
-                  </div>
+
+                  <FaBrain />
 
                   <div>
-                    <span>AI ANALYSIS</span>
+                    <span>AI Analysis</span>
                     <h4>Awaiting data</h4>
                   </div>
+
                 </div>
 
               </div>
@@ -82,14 +80,8 @@ function Dashboard() {
 
             <div className="hero-right">
 
-              <div className="ai-status">
-
-                <FaCircle />
-
-                <span>AI ENGINE</span>
-
-                <strong>Ready</strong>
-
+              <div className="ai-chip">
+                <span>●</span> AI Engine Ready
               </div>
 
               <button className="hero-btn primary">
@@ -112,76 +104,42 @@ function Dashboard() {
           </section>
 
 
-          {/* KPI SECTION */}
-          <section className="section-heading">
-
-            <div>
-              <h2>Performance Overview</h2>
-
-              <p>
-                Key indicators across the training program.
-              </p>
-            </div>
-
-            <div className="trend-indicator">
-              <FaArrowUp />
-              <span>Overall performance improving</span>
-            </div>
-
-          </section>
-
+          {/* ================= PERFORMANCE OVERVIEW ================= */}
 
           <section className="stats-grid">
 
             <StatCard
-              title="Total Trainers"
-              value="148"
+              title="Active Trainers"
+              value="156"
               change="+12%"
               icon={<FaChalkboardTeacher />}
             />
 
             <StatCard
-              title="Trainings Conducted"
-              value="1,256"
+              title="Total Sessions"
+              value="328"
               change="+8%"
               icon={<FaBookOpen />}
             />
 
             <StatCard
-              title="Average Rating"
-              value="4.8"
-              change="+0.4"
+              title="Average Performance"
+              value="4.4/5"
+              change="+0.3"
               icon={<FaStar />}
             />
 
             <StatCard
-              title="Satisfaction Rate"
-              value="96%"
-              change="+5%"
-              icon={<FaSmile />}
+              title="At-Risk Trainers"
+              value="8"
+              change="Needs Attention"
+              icon={<FaExclamationTriangle />}
             />
 
           </section>
 
 
-          {/* ANALYTICS SECTION */}
-          <section className="section-heading analytics-heading">
-
-            <div>
-              <h2>Training Analytics</h2>
-
-              <p>
-                Performance trends and organizational insights.
-              </p>
-            </div>
-
-            <button className="view-all-btn">
-              View Analytics
-              <FaChartLine />
-            </button>
-
-          </section>
-
+          {/* ================= TRAINING ANALYTICS ================= */}
 
           <section className="analytics-section">
 
@@ -192,87 +150,95 @@ function Dashboard() {
           </section>
 
 
-          {/* AI INSIGHTS */}
-          <section className="ai-overview">
+          {/* ================= RECENT TRAINER ACTIVITY ================= */}
 
-            <div className="ai-overview-header">
+          <section className="dashboard-section">
 
-              <div className="ai-title">
+            <div className="section-heading">
 
-                <div className="ai-title-icon">
-                  <FaBrain />
-                </div>
+              <div>
+                <h2>Recent Trainer Activity</h2>
 
-                <div>
-                  <h2>AI Insights</h2>
-
-                  <p>
-                    Intelligent observations from training performance data.
-                  </p>
-                </div>
-
+                <p>
+                  Latest training sessions and trainer activity.
+                </p>
               </div>
 
-              <span className="ai-ready">
-                <FaCircle />
-                Ready for analysis
-              </span>
+              <button className="view-btn">
+                View All
+              </button>
 
             </div>
 
 
-            <div className="ai-insight-grid">
+            <div className="activity-table">
 
-              <div className="ai-insight">
+              <div className="activity-row activity-header">
 
-                <span className="insight-label">
-                  PERFORMANCE
-                </span>
-
-                <h3>
-                  STEM training is currently leading.
-                </h3>
-
-                <p>
-                  The STEM department shows the strongest overall
-                  training performance in the current dataset.
-                </p>
+                <span>Trainer</span>
+                <span>Training Topic</span>
+                <span>Region</span>
+                <span>Status</span>
 
               </div>
 
 
-              <div className="ai-insight">
+              <div className="activity-row">
 
-                <span className="insight-label">
-                  SATISFACTION
+                <strong>Sarah Ahmed</strong>
+
+                <span>Classroom Management</span>
+
+                <span>Bhimber</span>
+
+                <span className="status-completed">
+                  Completed
                 </span>
-
-                <h3>
-                  Overall trainee satisfaction is strong.
-                </h3>
-
-                <p>
-                  The current satisfaction rate indicates consistently
-                  positive training experiences.
-                </p>
 
               </div>
 
 
-              <div className="ai-insight">
+              <div className="activity-row">
 
-                <span className="insight-label">
-                  RECOMMENDATION
+                <strong>Ali Hassan</strong>
+
+                <span>Literacy Development</span>
+
+                <span>Chotagala</span>
+
+                <span className="status-completed">
+                  Completed
                 </span>
 
-                <h3>
-                  Upload data to generate recommendations.
-                </h3>
+              </div>
 
-                <p>
-                  AI recommendations will become available after
-                  training data is uploaded and analyzed.
-                </p>
+
+              <div className="activity-row">
+
+                <strong>Fatima Khan</strong>
+
+                <span>Digital Teaching Tools</span>
+
+                <span>Khurrata</span>
+
+                <span className="status-progress">
+                  In Progress
+                </span>
+
+              </div>
+
+
+              <div className="activity-row">
+
+                <strong>Ayesha Malik</strong>
+
+                <span>Classroom Management</span>
+
+                <span>Mallot</span>
+
+                <span className="status-completed">
+                  Completed
+                </span>
 
               </div>
 
@@ -280,9 +246,105 @@ function Dashboard() {
 
           </section>
 
-        </main>
+
+          {/* ================= PERFORMANCE DISTRIBUTION ================= */}
+
+          <section className="dashboard-section">
+
+            <div className="section-heading">
+
+              <div>
+                <h2>Performance Distribution</h2>
+
+                <p>
+                  Overview of trainer performance levels.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div className="distribution-grid">
+
+              <div className="distribution-card">
+
+                <span>Excellent</span>
+
+                <strong>45%</strong>
+
+                <div className="distribution-bar">
+
+                  <div
+                    className="distribution-fill excellent"
+                    style={{ width: "45%" }}
+                  ></div>
+
+                </div>
+
+              </div>
+
+
+              <div className="distribution-card">
+
+                <span>Good</span>
+
+                <strong>35%</strong>
+
+                <div className="distribution-bar">
+
+                  <div
+                    className="distribution-fill good"
+                    style={{ width: "35%" }}
+                  ></div>
+
+                </div>
+
+              </div>
+
+
+              <div className="distribution-card">
+
+                <span>Average</span>
+
+                <strong>15%</strong>
+
+                <div className="distribution-bar">
+
+                  <div
+                    className="distribution-fill average"
+                    style={{ width: "15%" }}
+                  ></div>
+
+                </div>
+
+              </div>
+
+
+              <div className="distribution-card">
+
+                <span>Needs Improvement</span>
+
+                <strong>5%</strong>
+
+                <div className="distribution-bar">
+
+                  <div
+                    className="distribution-fill needs-improvement"
+                    style={{ width: "5%" }}
+                  ></div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
 
       </div>
+
     </div>
   );
 }

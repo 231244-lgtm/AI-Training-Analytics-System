@@ -1,7 +1,7 @@
 import {
   ResponsiveContainer,
-  AreaChart,
-  Area,
+  LineChart,
+  Line,
   XAxis,
   YAxis,
   Tooltip,
@@ -11,22 +11,37 @@ import {
 import "../styles/ChartCard.css";
 
 const performanceData = [
-  { month: "Jan", score: 72 },
-  { month: "Feb", score: 76 },
-  { month: "Mar", score: 81 },
-  { month: "Apr", score: 85 },
-  { month: "May", score: 90 },
-  { month: "Jun", score: 95 },
+  { month: "Jan", performance: 45, sessions: 4.5 },
+  { month: "Feb", performance: 52, sessions: 5.2 },
+  { month: "Mar", performance: 48, sessions: 4.8 },
+  { month: "Apr", performance: 61, sessions: 6.1 },
+  { month: "May", performance: 58, sessions: 5.8 },
+  { month: "Jun", performance: 64, sessions: 6.4 },
 ];
 
 function CustomTooltip({ active, payload, label }) {
   if (active && payload && payload.length) {
     return (
       <div className="custom-tooltip">
-        <p className="tooltip-month">{label}</p>
-        <p className="tooltip-score">
-          Score: <strong>{payload[0].value}</strong>
+
+        <p className="tooltip-month">
+          {label}
         </p>
+
+        <p className="tooltip-score">
+          Performance:{" "}
+          <strong>
+            {payload[0]?.value}
+          </strong>
+        </p>
+
+        <p className="tooltip-score">
+          Sessions:{" "}
+          <strong>
+            {payload[1]?.value}
+          </strong>
+        </p>
+
       </div>
     );
   }
@@ -39,29 +54,31 @@ function ChartCard() {
     <div className="chart-card">
 
       {/* HEADER */}
+
       <div className="chart-header">
 
         <div>
-          <h3>Training Performance</h3>
+
+          <h3>
+            Training Sessions & Performance Trend
+          </h3>
 
           <p>
-            Average trainer performance over the last 6 months
+            Monthly training activity and performance trends
           </p>
-        </div>
 
-        <div className="chart-growth">
-          <span>▲</span>
-          +18%
         </div>
 
       </div>
 
+
       {/* CHART */}
+
       <div className="chart-container">
 
         <ResponsiveContainer width="100%" height={340}>
 
-          <AreaChart
+          <LineChart
             data={performanceData}
             margin={{
               top: 10,
@@ -71,37 +88,12 @@ function ChartCard() {
             }}
           >
 
-            <defs>
-
-              <linearGradient
-                id="performanceGradient"
-                x1="0"
-                y1="0"
-                x2="0"
-                y2="1"
-              >
-
-                <stop
-                  offset="0%"
-                  stopColor="#2563eb"
-                  stopOpacity={0.28}
-                />
-
-                <stop
-                  offset="100%"
-                  stopColor="#2563eb"
-                  stopOpacity={0.02}
-                />
-
-              </linearGradient>
-
-            </defs>
-
             <CartesianGrid
               stroke="#e2e8f0"
               strokeDasharray="4 4"
               vertical={false}
             />
+
 
             <XAxis
               dataKey="month"
@@ -111,13 +103,27 @@ function ChartCard() {
               dy={10}
             />
 
+
             <YAxis
-              domain={[60, 100]}
+              yAxisId="performance"
+              domain={[0, 80]}
               axisLine={false}
               tickLine={false}
               tick={{ fill: "#64748b", fontSize: 13 }}
               width={35}
             />
+
+
+            <YAxis
+              yAxisId="sessions"
+              orientation="right"
+              domain={[0, 8]}
+              axisLine={false}
+              tickLine={false}
+              tick={{ fill: "#64748b", fontSize: 13 }}
+              width={30}
+            />
+
 
             <Tooltip
               content={<CustomTooltip />}
@@ -127,12 +133,13 @@ function ChartCard() {
               }}
             />
 
-            <Area
+
+            <Line
+              yAxisId="performance"
               type="monotone"
-              dataKey="score"
+              dataKey="performance"
               stroke="#2563eb"
               strokeWidth={3}
-              fill="url(#performanceGradient)"
               dot={{
                 r: 4,
                 fill: "#2563eb",
@@ -147,28 +154,68 @@ function ChartCard() {
               }}
             />
 
-          </AreaChart>
+
+            <Line
+              yAxisId="sessions"
+              type="monotone"
+              dataKey="sessions"
+              stroke="#16a34a"
+              strokeWidth={3}
+              dot={{
+                r: 4,
+                fill: "#16a34a",
+                stroke: "#ffffff",
+                strokeWidth: 2,
+              }}
+              activeDot={{
+                r: 7,
+                fill: "#16a34a",
+                stroke: "#ffffff",
+                strokeWidth: 3,
+              }}
+            />
+
+          </LineChart>
 
         </ResponsiveContainer>
 
       </div>
 
+
       {/* FOOTER */}
+
       <div className="chart-footer">
 
         <div>
-          <span className="footer-label">Starting Score</span>
-          <strong>72</strong>
+          <span className="footer-label">
+            Starting Performance
+          </span>
+
+          <strong>
+            45
+          </strong>
         </div>
 
-        <div>
-          <span className="footer-label">Current Score</span>
-          <strong>95</strong>
-        </div>
 
         <div>
-          <span className="footer-label">Overall Growth</span>
-          <strong className="growth-value">+23 points</strong>
+          <span className="footer-label">
+            Current Performance
+          </span>
+
+          <strong>
+            64
+          </strong>
+        </div>
+
+
+        <div>
+          <span className="footer-label">
+            Performance Growth
+          </span>
+
+          <strong className="growth-value">
+            +19 points
+          </strong>
         </div>
 
       </div>
