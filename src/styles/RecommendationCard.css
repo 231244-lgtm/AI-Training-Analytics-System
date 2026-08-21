@@ -1,80 +1,90 @@
-.recommendation-card{
-    background:white;
-    padding:28px;
-    border-radius:22px;
-    box-shadow:0 10px 25px rgba(15,23,42,.08);
-    transition:.3s;
+.recommendation-card {
+  background: #ffffff;
+  border: 1px solid #e8edf5;
+  padding: 26px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+  transition: 0.25s ease;
 }
 
-.recommendation-card:hover{
-    transform:translateY(-5px);
+.recommendation-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.09);
 }
 
-.priority{
-    display:inline-block;
-    padding:8px 18px;
-    border-radius:999px;
-    font-weight:600;
-    margin-bottom:18px;
+.priority {
+  display: inline-block;
+  padding: 7px 13px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 18px;
 }
 
-.high{
-    background:#FEE2E2;
-    color:#DC2626;
+.priority.high {
+  background: #fef2f2;
+  color: #dc2626;
 }
 
-.medium{
-    background:#FEF3C7;
-    color:#CA8A04;
+.priority.medium {
+  background: #fffbeb;
+  color: #b45309;
 }
 
-.low{
-    background:#DCFCE7;
-    color:#16A34A;
+.priority.low {
+  background: #ecfdf5;
+  color: #15803d;
 }
 
-.recommendation-card h2{
-    color:#0F172A;
-    margin-bottom:10px;
+.recommendation-card h2 {
+  margin: 0 0 8px;
+  color: #0f172a;
+  font-size: 20px;
 }
 
-.recommendation-card h3{
-    color:#2563EB;
-    margin-bottom:15px;
+.recommendation-card h3 {
+  margin: 0 0 14px;
+  color: #2563eb;
+  font-size: 15px;
 }
 
-.recommendation-card p{
-    color:#64748B;
-    line-height:1.6;
-    margin-bottom:25px;
+.recommendation-card p {
+  margin-bottom: 22px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
-.confidence{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:25px;
+.confidence {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.confidence span{
-    color:#64748B;
+.confidence span {
+  color: #64748b;
+  font-size: 13px;
 }
 
-.confidence strong{
-    color:#2563EB;
+.confidence strong {
+  color: #2563eb;
+  font-size: 15px;
 }
 
-.recommendation-card button{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:12px;
-    background:#2563EB;
-    color:white;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
+.recommendation-card button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s ease;
 }
 
-.recommendation-card button:hover{
-    background:#1D4ED8;
+.recommendation-card button:hover {
+  background: #1d4ed8;
 }
