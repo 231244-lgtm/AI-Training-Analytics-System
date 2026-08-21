@@ -27,8 +27,6 @@ function DepartmentPieChart() {
   return (
     <div className="small-chart">
 
-      <h2>Department Distribution</h2>
-
       <ResponsiveContainer width="100%" height={280}>
 
         <PieChart>
@@ -36,14 +34,17 @@ function DepartmentPieChart() {
           <Pie
             data={data}
             dataKey="value"
+            nameKey="name"
+            cx="50%"
+            cy="45%"
             outerRadius={90}
             label
           >
 
             {data.map((entry, index) => (
               <Cell
-                key={index}
-                fill={COLORS[index]}
+                key={entry.name}
+                fill={COLORS[index % COLORS.length]}
               />
             ))}
 

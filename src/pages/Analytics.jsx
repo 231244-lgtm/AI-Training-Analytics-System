@@ -34,16 +34,20 @@ function Analytics() {
           <section className="analytics-header">
 
             <div>
+
               <span className="analytics-eyebrow">
                 PERFORMANCE OVERVIEW
               </span>
 
-              <h1>Training Analytics</h1>
+              <h1>
+                Training Analytics
+              </h1>
 
               <p>
                 Monitor trainer performance, training outcomes,
                 and organizational trends from one centralized view.
               </p>
+
             </div>
 
             <div className="analytics-status">
@@ -54,28 +58,34 @@ function Analytics() {
           </section>
 
 
-          {/* ================= KPI SECTION ================= */}
+          {/* ================= KPI CARDS ================= */}
 
           <section className="kpi-section">
 
             <div className="kpi-card">
 
               <div className="kpi-top">
+
                 <div className="kpi-icon">
                   <FaStar />
                 </div>
 
                 <span className="kpi-change">
-                  +0.4
+                  +0.3
                 </span>
+
               </div>
 
-              <h2>4.8</h2>
+              <h2>
+                4.8
+              </h2>
 
-              <p>Average Rating</p>
+              <p>
+                Average Rating
+              </p>
 
               <span className="kpi-description">
-                Trainer performance score
+                Overall trainer rating
               </span>
 
             </div>
@@ -84,6 +94,7 @@ function Analytics() {
             <div className="kpi-card">
 
               <div className="kpi-top">
+
                 <div className="kpi-icon">
                   <FaCheckCircle />
                 </div>
@@ -91,11 +102,16 @@ function Analytics() {
                 <span className="kpi-change">
                   +5%
                 </span>
+
               </div>
 
-              <h2>96%</h2>
+              <h2>
+                96%
+              </h2>
 
-              <p>Completion Rate</p>
+              <p>
+                Completion Rate
+              </p>
 
               <span className="kpi-description">
                 Training completion
@@ -107,21 +123,27 @@ function Analytics() {
             <div className="kpi-card">
 
               <div className="kpi-top">
+
                 <div className="kpi-icon">
                   <FaUsers />
                 </div>
 
                 <span className="kpi-change">
-                  +12%
+                  Active
                 </span>
+
               </div>
 
-              <h2>148</h2>
+              <h2>
+                156
+              </h2>
 
-              <p>Total Trainers</p>
+              <p>
+                Active Trainers
+              </p>
 
               <span className="kpi-description">
-                Active trainers
+                Trainers currently active
               </span>
 
             </div>
@@ -130,6 +152,7 @@ function Analytics() {
             <div className="kpi-card">
 
               <div className="kpi-top">
+
                 <div className="kpi-icon">
                   <FaChartLine />
                 </div>
@@ -137,14 +160,19 @@ function Analytics() {
                 <span className="kpi-change">
                   +18%
                 </span>
+
               </div>
 
-              <h2>95</h2>
+              <h2>
+                64
+              </h2>
 
-              <p>Performance Score</p>
+              <p>
+                Performance Score
+              </p>
 
               <span className="kpi-description">
-                Current overall score
+                Current performance trend
               </span>
 
             </div>
@@ -157,23 +185,34 @@ function Analytics() {
           <section className="analytics-section-title">
 
             <div>
-              <h2>Performance Trends</h2>
+
+              <h2>
+                Performance Trends
+              </h2>
 
               <p>
                 Average trainer performance over the last six months.
               </p>
+
             </div>
 
             <div className="section-badge">
+
               <FaArrowUp />
+
               +18% growth
+
             </div>
 
           </section>
 
 
           <section className="performance-main">
+
             <PerformanceChart />
+
+
+            {/* AI ANALYSIS */}
 
             <div className="ai-analysis-card">
 
@@ -184,8 +223,15 @@ function Analytics() {
                 </div>
 
                 <div>
-                  <h3>AI Analysis</h3>
-                  <p>Latest performance insights</p>
+
+                  <h3>
+                    AI Analysis
+                  </h3>
+
+                  <p>
+                    Latest performance insights
+                  </p>
+
                 </div>
 
               </div>
@@ -193,9 +239,13 @@ function Analytics() {
 
               <div className="ai-metric">
 
-                <span>Top Trainer</span>
+                <span>
+                  Top Trainer
+                </span>
 
-                <strong>Ayesha Khan</strong>
+                <strong>
+                  Ayesha Khan
+                </strong>
 
                 <small>
                   Overall rating: 4.9 / 5
@@ -206,9 +256,13 @@ function Analytics() {
 
               <div className="ai-metric">
 
-                <span>Leading Department</span>
+                <span>
+                  Leading Department
+                </span>
 
-                <strong>STEM</strong>
+                <strong>
+                  STEM
+                </strong>
 
                 <small>
                   Highest average performance
@@ -219,9 +273,13 @@ function Analytics() {
 
               <div className="ai-metric">
 
-                <span>Training Completion</span>
+                <span>
+                  Training Completion
+                </span>
 
-                <strong>96%</strong>
+                <strong>
+                  96%
+                </strong>
 
                 <small>
                   Strong completion performance
@@ -233,9 +291,13 @@ function Analytics() {
               <div className="ai-recommendation">
 
                 <div className="recommendation-title">
+
                   <FaLightbulb />
 
-                  <span>Recommended Action</span>
+                  <span>
+                    Recommended Action
+                  </span>
+
                 </div>
 
                 <p>
@@ -255,11 +317,15 @@ function Analytics() {
           <section className="analytics-section-title secondary-title">
 
             <div>
-              <h2>Training Performance</h2>
+
+              <h2>
+                Training Performance
+              </h2>
 
               <p>
                 Compare trainer performance and department distribution.
               </p>
+
             </div>
 
           </section>
@@ -267,15 +333,21 @@ function Analytics() {
 
           <section className="charts-grid">
 
+
             <div className="chart-panel">
+
               <div className="chart-panel-header">
 
                 <div>
-                  <h3>Top Trainers</h3>
+
+                  <h3>
+                    Top Trainers
+                  </h3>
 
                   <p>
                     Highest performing trainers
                   </p>
+
                 </div>
 
               </div>
@@ -290,11 +362,15 @@ function Analytics() {
               <div className="chart-panel-header">
 
                 <div>
-                  <h3>Department Distribution</h3>
+
+                  <h3>
+                    Department Distribution
+                  </h3>
 
                   <p>
                     Training distribution by department
                   </p>
+
                 </div>
 
               </div>
@@ -306,7 +382,7 @@ function Analytics() {
           </section>
 
 
-          {/* ================= AI SUMMARY ================= */}
+          {/* ================= AI INSIGHTS ================= */}
 
           <section className="ai-summary-section">
 
@@ -319,25 +395,33 @@ function Analytics() {
                 </div>
 
                 <div>
-                  <h2>AI Insights</h2>
+
+                  <h2>
+                    AI Insights
+                  </h2>
 
                   <p>
                     Intelligent observations from training data
                   </p>
+
                 </div>
 
               </div>
 
 
               <div className="ai-ready">
+
                 <span></span>
+
                 Ready for analysis
+
               </div>
 
             </div>
 
 
             <div className="ai-insight-grid">
+
 
               <div className="ai-insight">
 
@@ -346,12 +430,12 @@ function Analytics() {
                 </span>
 
                 <h3>
-                  STEM training is currently leading.
+                  STEM is the leading department.
                 </h3>
 
                 <p>
-                  The STEM department shows the strongest
-                  overall training performance in the current dataset.
+                  STEM currently represents the largest
+                  share of training activity at 40%.
                 </p>
 
               </div>
@@ -360,16 +444,16 @@ function Analytics() {
               <div className="ai-insight">
 
                 <span className="insight-label">
-                  SATISFACTION
+                  TRAINER
                 </span>
 
                 <h3>
-                  Overall trainee satisfaction is strong.
+                  Ayesha Khan is the top performer.
                 </h3>
 
                 <p>
-                  The current satisfaction rate indicates
-                  consistently positive training experiences.
+                  Ayesha Khan has an overall trainer
+                  rating of 4.9 out of 5.
                 </p>
 
               </div>
@@ -386,11 +470,12 @@ function Analytics() {
                 </h3>
 
                 <p>
-                  Allocate additional advanced training
-                  opportunities based on current performance trends.
+                  Focus upcoming advanced training
+                  opportunities on high-performing STEM trainers.
                 </p>
 
               </div>
+
 
             </div>
 

@@ -4,7 +4,8 @@ import {
   Bar,
   XAxis,
   YAxis,
- Tooltip,
+  Tooltip,
+  CartesianGrid,
 } from "recharts";
 
 import "../styles/TrainerBarChart.css";
@@ -20,22 +21,45 @@ function TrainerBarChart() {
   return (
     <div className="small-chart">
 
-      <h2>Top Trainers</h2>
-
       <ResponsiveContainer width="100%" height={280}>
 
-        <BarChart data={data}>
+        <BarChart
+          data={data}
+          margin={{
+            top: 10,
+            right: 10,
+            left: 0,
+            bottom: 5,
+          }}
+        >
 
-          <XAxis dataKey="name" />
+          <CartesianGrid
+            stroke="#e2e8f0"
+            strokeDasharray="4 4"
+            vertical={false}
+          />
 
-          <YAxis />
+          <XAxis
+            dataKey="name"
+            axisLine={false}
+            tickLine={false}
+            tick={{ fill: "#64748b", fontSize: 13 }}
+          />
+
+          <YAxis
+            domain={[0, 100]}
+            axisLine={false}
+            tickLine={false}
+            tick={{ fill: "#64748b", fontSize: 13 }}
+          />
 
           <Tooltip />
 
           <Bar
             dataKey="rating"
             fill="#2563EB"
-            radius={[8,8,0,0]}
+            radius={[8, 8, 0, 0]}
+            barSize={42}
           />
 
         </BarChart>

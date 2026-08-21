@@ -1,37 +1,23 @@
+import {
+  FaSearch,
+  FaBell,
+  FaUserCircle,
+} from "react-icons/fa";
+
 import "../styles/Navbar.css";
-import { FaBell, FaSearch, FaUserCircle } from "react-icons/fa";
-import { useLocation } from "react-router-dom";
 
 function Navbar() {
-  const location = useLocation();
-
-  const today = new Date().toLocaleDateString("en-US", {
-    weekday: "long",
-    month: "long",
-    day: "numeric",
-  });
-
-  const pageTitles = {
-    "/": "Dashboard",
-    "/trainer-profiles": "Trainer Profiles",
-    "/analytics": "Analytics",
-    "/feedback": "Feedback",
-    "/recommendations": "Recommendations",
-    "/settings": "Settings",
-  };
-
-  const currentTitle = pageTitles[location.pathname] || "Dashboard";
-
   return (
     <header className="navbar">
-      <div>
-        <h2>{currentTitle}</h2>
-        <p>{today}</p>
+
+      <div className="navbar-title">
+        <h2>Training Analytics</h2>
+        <p>Wednesday, August 19</p>
       </div>
 
       <div className="navbar-right">
 
-        <div className="search-box">
+        <div className="navbar-search">
           <FaSearch />
           <input
             type="text"
@@ -39,19 +25,23 @@ function Navbar() {
           />
         </div>
 
-        <button className="icon-btn">
+        <button className="notification-btn">
           <FaBell />
         </button>
 
-        <div className="profile">
-          <FaUserCircle />
+        <div className="admin-profile">
+
+          <FaUserCircle className="admin-icon" />
+
           <div>
-            <h4>Admin</h4>
+            <strong>Admin</strong>
             <span>READ Foundation</span>
           </div>
+
         </div>
 
       </div>
+
     </header>
   );
 }
