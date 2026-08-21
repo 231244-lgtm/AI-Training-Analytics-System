@@ -230,8 +230,8 @@ function Dashboard() {
 
               <div className="activity-row">
 
-                <strong>Ayesha Malik</strong>
-
+                <strong>Ayesha Khan</strong>
+                
                 <span>Classroom Management</span>
 
                 <span>Mallot</span>
