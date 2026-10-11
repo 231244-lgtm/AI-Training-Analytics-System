@@ -490,3 +490,32 @@
   }
 
 }
+/* =========================================================
+   DISTRICT LEARNING GAIN CHART
+========================================================= */
+
+/* Let the district section use the full available width */
+.district-learning-section {
+  width: 100%;
+  margin-bottom: 38px;
+}
+
+/* Make the chart card fill its section */
+.district-learning-section .chart-panel {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Give the chart more breathing room */
+.district-learning-section .small-chart {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Keep charts responsive on smaller screens */
+@media (max-width: 650px) {
+  .district-learning-section .chart-panel {
+    padding: 16px;
+  }
+}

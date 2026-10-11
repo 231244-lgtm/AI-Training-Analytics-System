@@ -1,35 +1,40 @@
+
 import "../styles/RecommendationCard.css";
 
 function RecommendationCard({
   priority,
   title,
-  trainer,
   reason,
-  confidence,
+  evidence,
+  action,
 }) {
+  const safePriority = ["High", "Medium", "Low"].includes(priority)
+    ? priority
+    : "Medium";
+
   return (
     <div className="recommendation-card">
-
-      <div className={`priority ${priority.toLowerCase()}`}>
-        {priority} Priority
+      <div className={`priority ${safePriority.toLowerCase()}`}>
+        {safePriority} Priority
       </div>
 
       <h2>{title}</h2>
 
-      <h3>{trainer}</h3>
-
       <p>{reason}</p>
 
-      <div className="confidence">
+      {evidence && (
+        <div className="recommendation-evidence">
+          <strong>Supporting evidence</strong>
+          <p>{evidence}</p>
+        </div>
+      )}
 
-        <span>AI Confidence</span>
-
-        <strong>{confidence}%</strong>
-
-      </div>
-
-      <button>Approve Recommendation</button>
-
+      {action && (
+        <div className="recommendation-action">
+          <strong>Suggested action</strong>
+          <p>{action}</p>
+        </div>
+      )}
     </div>
   );
 }

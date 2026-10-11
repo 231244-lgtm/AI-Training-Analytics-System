@@ -1,87 +1,191 @@
-.settings-page{
-    padding:32px;
+
+.settings-page {
+  padding: 32px 36px 48px;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
 }
 
-.settings-header{
-    margin-bottom:35px;
+.settings-header {
+  margin-bottom: 28px;
 }
 
-.settings-header h1{
-    font-size:42px;
-    color:#0F172A;
+.settings-header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+  color: #0f172a;
 }
 
-.settings-header p{
-    margin-top:10px;
-    color:#64748B;
-    font-size:17px;
+.settings-header p {
+  margin: 9px 0 0;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
-.settings-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
-    gap:25px;
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 22px;
+  width: 100%;
 }
 
-.setting-item{
-    display:flex;
-    flex-direction:column;
-    margin-bottom:20px;
+/* Individual settings cards */
+.setting-card {
+  min-width: 0;
+  padding: 26px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #e5ebf5;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
 }
 
-.setting-item label{
-    font-weight:600;
-    margin-bottom:8px;
-    color:#334155;
+.setting-card h2 {
+  margin: 0 0 24px;
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: 750;
 }
 
-.setting-item input{
-    padding:14px;
-    border:1px solid #CBD5E1;
-    border-radius:10px;
-    background:#F8FAFC;
+/* Read-only account and configuration fields */
+.setting-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
 }
 
-.toggle-item{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:20px;
+.setting-item label {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 650;
 }
 
-.toggle-item label{
-    font-weight:500;
-    color:#334155;
+.setting-item input {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 14px;
+  box-sizing: border-box;
+  color: #334155;
+  background: #f8fafc;
+  border: 1px solid #dbe4f0;
+  border-radius: 9px;
+  font: inherit;
 }
 
-.toggle-item input{
-    width:22px;
-    height:22px;
-    cursor:pointer;
+.setting-item input:read-only {
+  cursor: default;
 }
 
-.settings-btn{
-    width:100%;
-    padding:14px;
-    margin-bottom:15px;
-    border:none;
-    border-radius:12px;
-    background:#2563EB;
-    color:white;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
-    transition:.3s;
+/* Preference toggles */
+.toggle-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
 }
 
-.settings-btn:hover{
-    background:#1D4ED8;
+.toggle-item label {
+  color: #334155;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
 }
 
-.settings-btn.save{
-    background:#16A34A;
+.toggle-item input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: #2563eb;
+  cursor: pointer;
 }
 
-.settings-btn.save:hover{
-    background:#15803D;
+/* Supporting notes */
+.settings-note {
+  margin: 8px 0 16px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Security actions */
+.settings-btn {
+  display: block;
+  width: 100%;
+  padding: 13px 16px;
+  margin-bottom: 12px;
+  border: 1px solid #2563eb;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.settings-btn:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.settings-btn.save {
+  background: #15803d;
+  border-color: #15803d;
+}
+
+.settings-btn.save:hover:not(:disabled) {
+  background: #166534;
+}
+
+.settings-btn:disabled,
+.settings-btn:disabled:hover {
+  background: #e2e8f0;
+  border-color: #e2e8f0;
+  color: #64748b;
+  cursor: not-allowed;
+}
+
+/* Tablet */
+@media (max-width: 1050px) {
+  .settings-page {
+    padding: 26px 24px 40px;
+  }
+
+  .settings-grid {
+    gap: 18px;
+  }
+
+  .setting-card {
+    padding: 22px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .settings-page {
+    padding: 20px 16px 32px;
+  }
+
+  .settings-header h1 {
+    font-size: 28px;
+  }
+
+  .settings-header p {
+    font-size: 14px;
+  }
+
+  .settings-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .setting-card {
+    padding: 20px;
+    border-radius: 14px;
+  }
 }
